@@ -1,6 +1,6 @@
 /*
 ~/coding/langages/lua/c_interfacing$
- $$DATE$$ : mer. 07 février 2018 (15:21:34)
+ $$DATE$$ : mer. 07 février 2018 (18:54:11)
 
 g++ libdmp.cpp dumb_with_openal.cpp dumb/src/dumb_fPIC.a -llua -lopenal -fvisibility=hidden -fPIC -shared -Wall -W -Idumb/include -o libdmp.so
 

@@ -1,21 +1,19 @@
-# Defold Music Player
+# DMP : Defold Music Player
 
-## Creating DUMB archive
+It's a library for playing music modules (xm, s3m, mod, it …) with Defold.
 
-DUMB will be used as a static library.
+It's using as backbone the DUMB replayer (http://dumb.sourceforge.net/ and https://github.com/kode54/dumb).
 
-```
-cd dumb/src
-for i in core it helpers; do gcc "$i"/*.c -c -fPIC -I../include; done
-ar cr dumb_fPIC.a *.o
-```
+You can use it as a standalone lib, with Löve2D for example.
+
+Löve2D has already its own lib for module replay (it uses libmodplug). But with DMP, you can get rows informations during the replay.
+
+
 
 ## Creating DMP library
 
-No Makefile yet, but it's simple:
-
 ```
-g++ libdmp.cpp dumb_with_openal.cpp dumb/src/dumb_fPIC.a -llua -lopenal -fvisibility=hidden -fPIC -shared -Wall -W -Idumb/include -o libdmp.so
+Make
 ```
 
 
