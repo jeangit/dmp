@@ -137,8 +137,28 @@ static int microsleep(lua_State *L)
   return 0;
 }
 
+// return in a table the devices
+static int get_devices_name( lua_State *L)
+{
+  lua_newtable( L);
+  char const *liste=0;
+  int k = 1;
+  do {
+    liste=AL_list_devices();
+    if (liste) {
+      //lua_pushi fprintf(stderr,"%s\n",liste); }
+      lua_pushinteger( L, k);
+    lua_pushstring( L, liste);
+    lua_settable( L, -3);
+    k++;
+  }
+} while(liste);
+
+return 1;
+}
 
 static const luaL_Reg dmp_methods[] = {
+  {"get_devices_name", get_devices_name },
   {"init", init},
   {"load", load},
   {"play", play},

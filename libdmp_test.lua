@@ -4,6 +4,8 @@ local dmp=require"libdmp"
 
 local msg=dmp.init()
 
+local devices = dmp.get_devices_name()
+for i,v in ipairs(devices) do print("device #"..i,v) end
 
 for t=1,4 do
   local streamer, res = dmp.load("cerror-dreidl.mod")

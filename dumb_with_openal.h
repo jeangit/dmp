@@ -1,4 +1,4 @@
-// $$DATE$$ : mer. 07 février 2018 (14:58:17)
+// $$DATE$$ : dim. 31 mars 2019 (15:27:03)
 
 #ifndef DUMB_WITH_OPENAL_H
 #define DUMB_WITH_OPENAL_H
@@ -38,6 +38,7 @@ typedef struct {
 // pour OpenAL
 void AL_init();
 void AL_exit();
+char const* AL_list_devices();
 
 // pour DUMB
 streamer_t *DUMB_init_streamer(const char *module_filename);
